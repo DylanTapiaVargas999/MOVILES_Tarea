@@ -4,7 +4,9 @@ import '../screens/login.dart';
 import '../screens/register.dart';
 import '../screens/home.dart';
 import '../screens/perfil.dart';
-import '../screens/horarios.dart'; // Importa la pantalla de horarios
+import '../screens/horarios.dart';
+import '../screens/soporte/soporte_screen.dart';
+import '../screens/admin/admin_screen.dart';
 
 class AppRouters {
   static Route<dynamic> generateRoute(RouteSettings settings) {
@@ -24,11 +26,18 @@ class AppRouters {
         );
       case '/horarios':
         return MaterialPageRoute(builder: (_) => HorariosScreen());
+      case '/soporte':
+        return MaterialPageRoute(builder: (_) => SoporteScreen());
+      case '/admin':
+        return MaterialPageRoute(builder: (_) => AdminScreen());
       default:
         return MaterialPageRoute(
-          builder: (_) => Scaffold(
-            body: Center(child: Text('Ruta no encontrada: ${settings.name}')),
-          ),
+          builder:
+              (_) => Scaffold(
+                body: Center(
+                  child: Text('Ruta no encontrada: ${settings.name}'),
+                ),
+              ),
         );
     }
   }

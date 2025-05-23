@@ -15,15 +15,26 @@ class LoginViewModel extends ChangeNotifier {
     _errorMessage = null;
     notifyListeners();
 
+    // CASO ESPECIAL: correos soporte y admin
+    final correo = codigo.trim().toLowerCase();
+    if ((correo == 'soporte@upt.pe' && contrasena == 'soporte123') ||
+        (correo == 'elanchipa@upt.pe' && contrasena == 'admin123')) {
+      _codigoAlumno = correo;
+      _isLoading = false;
+      notifyListeners();
+      return true;
+    }
+
     try {
-      final query = await FirebaseFirestore.instance
-          .collection('datos_alumno')
-          .where('codigo', isEqualTo: codigo.trim())
-          .where('contrasena', isEqualTo: contrasena)
-          .get();
+      final query =
+          await FirebaseFirestore.instance
+              .collection('datos_alumno')
+              .where('codigo', isEqualTo: codigo.trim())
+              .where('contrasena', isEqualTo: contrasena)
+              .get();
 
       if (query.docs.isNotEmpty) {
-        _codigoAlumno = codigo.trim(); // <-- Guarda el código aquí
+        _codigoAlumno = codigo.trim();
         _isLoading = false;
         notifyListeners();
         return true; // Login exitoso
