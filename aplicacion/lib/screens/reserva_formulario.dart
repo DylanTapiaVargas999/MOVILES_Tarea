@@ -77,12 +77,14 @@ class _ReservaFormularioState extends State<ReservaFormulario> {
               TextFormField(
                 controller: cicloController,
                 decoration: InputDecoration(labelText: 'Ciclo'),
-                readOnly: true,
+                readOnly: true, // Bloqueado
+                enabled: false, // Bloqueado
               ),
               TextFormField(
                 controller: codigoController,
                 decoration: InputDecoration(labelText: 'Código'),
-                readOnly: true,
+                readOnly: true, // Bloqueado
+                enabled: false, // Bloqueado
               ),
               TextFormField(
                 controller: cursoController,
@@ -91,19 +93,8 @@ class _ReservaFormularioState extends State<ReservaFormulario> {
               TextFormField(
                 controller: fechaController,
                 decoration: InputDecoration(labelText: 'Fecha'),
-                onTap: () async {
-                  FocusScope.of(context).requestFocus(FocusNode());
-                  DateTime? picked = await showDatePicker(
-                    context: context,
-                    initialDate: DateTime.now(),
-                    firstDate: DateTime(2020),
-                    lastDate: DateTime(2100),
-                  );
-                  if (picked != null) {
-                    fechaController.text =
-                        "${picked.day.toString().padLeft(2, '0')}/${picked.month.toString().padLeft(2, '0')}/${picked.year}";
-                  }
-                },
+                readOnly: true, // Bloqueado
+                enabled: false, // Bloqueado
               ),
               TextFormField(
                 controller: horaInicioController,
@@ -138,13 +129,15 @@ class _ReservaFormularioState extends State<ReservaFormulario> {
               TextFormField(
                 controller: labController,
                 decoration: InputDecoration(labelText: 'Lab'),
+                readOnly: true, // Bloqueado
+                enabled: false, // Bloqueado
               ),
               TextFormField(
                 controller: nombreCompletoController,
                 decoration: InputDecoration(labelText: 'Nombre Completo'),
-                readOnly: true,
+                readOnly: true, // Bloqueado
+                enabled: false, // Bloqueado
               ),
-              // El campo "tema" ha sido eliminado del formulario
               SizedBox(height: 20),
               ElevatedButton(
                 onPressed: () async {

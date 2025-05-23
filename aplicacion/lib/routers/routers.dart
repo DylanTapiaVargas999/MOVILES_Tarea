@@ -7,6 +7,7 @@ import '../screens/perfil.dart';
 import '../screens/horarios.dart';
 import '../screens/soporte/soporte_screen.dart';
 import '../screens/admin/admin_screen.dart';
+import '../screens/respuesta_formulario.dart';
 
 class AppRouters {
   static Route<dynamic> generateRoute(RouteSettings settings) {
@@ -30,14 +31,18 @@ class AppRouters {
         return MaterialPageRoute(builder: (_) => SoporteScreen());
       case '/admin':
         return MaterialPageRoute(builder: (_) => AdminScreen());
+      case '/respuesta':
+        final codigoAlumno = settings.arguments as String;
+        return MaterialPageRoute(
+          builder: (_) => RespuestaFormularioScreen(codigoAlumno: codigoAlumno),
+        );
       default:
         return MaterialPageRoute(
-          builder:
-              (_) => Scaffold(
-                body: Center(
-                  child: Text('Ruta no encontrada: ${settings.name}'),
-                ),
-              ),
+          builder: (_) => Scaffold(
+            body: Center(
+              child: Text('Ruta no encontrada: ${settings.name}'),
+            ),
+          ),
         );
     }
   }

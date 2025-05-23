@@ -22,6 +22,10 @@ class _HomeScreenState extends State<HomeScreen> {
       Navigator.pushNamed(context, '/horarios');
       return;
     }
+     if (index == 2) {
+      Navigator.pushNamed(context, '/respuesta');
+      return;
+    }
     if (index == 3) {
       final codigoAlumno = Provider.of<LoginViewModel>(context, listen: false).codigoAlumno;
       if (codigoAlumno != null && codigoAlumno.isNotEmpty) {
@@ -49,7 +53,7 @@ class _HomeScreenState extends State<HomeScreen> {
       case 1:
         return const Center(child: Text('Horario', style: TextStyle(fontSize: 24)));
       case 2:
-        return const Center(child: Text('Categorías', style: TextStyle(fontSize: 24)));
+        return const Center(child: Text('Respuestas', style: TextStyle(fontSize: 24))); // Cambiado aquí
       default:
         return const Center(child: Text('Pantalla no definida', style: TextStyle(fontSize: 18)));
     }
@@ -93,7 +97,7 @@ class _CustomBottomBar extends StatelessWidget {
     final items = [
       _BarItem(icon: Icons.home, label: 'Inicio'),
       _BarItem(icon: Icons.schedule, label: 'Horario'),
-      _BarItem(icon: Icons.category, label: 'Categorías'),
+      _BarItem(icon: Icons.assignment_turned_in, label: 'Respuestas'), // Cambiado aquí
       _BarItem(icon: Icons.person, label: 'Perfil'),
     ];
 
