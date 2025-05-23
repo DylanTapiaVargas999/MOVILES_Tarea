@@ -1,3 +1,4 @@
+import 'package:aplicacion/screens/reserva.dart';
 import 'package:flutter/material.dart';
 import '../screens/login.dart';
 import '../screens/register.dart';
@@ -14,6 +15,8 @@ class AppRouters {
         return MaterialPageRoute(builder: (_) => RegisterScreen());
       case '/home':
         return MaterialPageRoute(builder: (_) => HomeScreen());
+      case '/formulario':
+        return MaterialPageRoute(builder: (_) => ReservaScreen());
       case '/perfil':
         final codigoAlumno = settings.arguments as String;
         return MaterialPageRoute(

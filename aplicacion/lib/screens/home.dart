@@ -13,6 +13,11 @@ class _HomeScreenState extends State<HomeScreen> {
   int currentIndex = 0;
 
   void _onTabTapped(int index) {
+    if (index == 0) {
+      // Redirige a la pantalla de horarios
+      Navigator.pushNamed(context, '/formulario');
+      return;
+    }
     if (index == 1) {
       // Redirige a la pantalla de horarios
       Navigator.pushNamed(context, '/horarios');
