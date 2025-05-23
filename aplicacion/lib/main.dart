@@ -4,6 +4,8 @@ import 'package:provider/provider.dart';
 import 'firebase_options.dart';
 import 'wiewmodels/login_viewmodel.dart';
 import 'wiewmodels/register_viewmodel.dart';
+import 'wiewmodels/horarios.viewmodel.dart';
+import 'wiewmodels/formulario_reserva_viewmodel.dart';
 import 'routers/routers.dart';
 
 void main() async {
@@ -21,7 +23,8 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(create: (_) => LoginViewModel()),
         ChangeNotifierProvider(create: (_) => RegisterViewModel()),
-        
+        ChangeNotifierProvider(create: (_) => HorariosViewModel()),
+        ChangeNotifierProvider(create: (_) => ReservaViewModel()),
       ],
       child: MaterialApp(
         title: 'Sistema de Reservas',
