@@ -29,13 +29,10 @@ class _HomeScreenState extends State<HomeScreen> {
       return;
     }
     if (index == 3) {
-      final codigoAlumno = Provider.of<LoginViewModel>(context, listen: false).codigoAlumno;
+      final codigoAlumno =
+          Provider.of<LoginViewModel>(context, listen: false).codigoAlumno;
       if (codigoAlumno != null && codigoAlumno.isNotEmpty) {
-        Navigator.pushNamed(
-          context,
-          '/perfil',
-          arguments: codigoAlumno,
-        );
+        Navigator.pushNamed(context, '/perfil', arguments: codigoAlumno);
       } else {
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(content: Text('No se encontró el código del alumno')),
@@ -51,13 +48,62 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget _buildContent() {
     switch (currentIndex) {
       case 0:
-        return const Center(child: Text('Pantalla Principal', style: TextStyle(fontSize: 24)));
+        return Center(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 24.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  decoration: BoxDecoration(
+                    color: Color(0xFF003366).withOpacity(0.08),
+                    shape: BoxShape.circle,
+                  ),
+                  padding: const EdgeInsets.all(24),
+                  child: Icon(Icons.school, color: Color(0xFF003366), size: 64),
+                ),
+                const SizedBox(height: 28),
+                Text(
+                  'Bienvenido',
+                  style: TextStyle(
+                    fontSize: 26,
+                    color: Color(0xFF003366),
+                    fontWeight: FontWeight.bold,
+                    letterSpacing: 1.2,
+                  ),
+                ),
+                const SizedBox(height: 10),
+                Text(
+                  'Sistema de Permisos para Laboratorios',
+                  style: TextStyle(
+                    fontSize: 18,
+                    color: Color(0xFF377CC8),
+                    fontWeight: FontWeight.w600,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+                const SizedBox(height: 18),
+                Text(
+                  'Solicita permisos para ingresar a los diferentes laboratorios de la Facultad de Ingeniería de Sistemas de manera fácil, rápida y organizada.',
+                  style: TextStyle(fontSize: 15, color: Colors.black87),
+                  textAlign: TextAlign.center,
+                ),
+              ],
+            ),
+          ),
+        );
       case 1:
-        return const Center(child: Text('Horario', style: TextStyle(fontSize: 24)));
+        return const Center(
+          child: Text('Horario', style: TextStyle(fontSize: 24)),
+        );
       case 2:
-        return const Center(child: Text('Respuestas', style: TextStyle(fontSize: 24))); // Cambiado aquí
+        return const Center(
+          child: Text('Respuestas', style: TextStyle(fontSize: 24)),
+        );
       default:
-        return const Center(child: Text('Pantalla no definida', style: TextStyle(fontSize: 18)));
+        return const Center(
+          child: Text('Pantalla no definida', style: TextStyle(fontSize: 18)),
+        );
     }
   }
 
@@ -66,18 +112,9 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Inicio'),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.logout),
-            tooltip: 'Cerrar sesión',
-            onPressed: () {
-              Navigator.of(context).pushNamedAndRemoveUntil(
-                '/login',
-                (route) => false,
-              );
-            },
-          ),
-        ],
+        backgroundColor: Color(0xFF003366),
+        foregroundColor: Colors.white,
+        elevation: 2,
       ),
       body: _buildContent(),
       bottomNavigationBar: _CustomBottomBar(
@@ -99,7 +136,7 @@ class _CustomBottomBar extends StatelessWidget {
     final items = [
       _BarItem(icon: Icons.home, label: 'Inicio'),
       _BarItem(icon: Icons.schedule, label: 'Horario'),
-      _BarItem(icon: Icons.assignment_turned_in, label: 'Respuestas'), // Cambiado aquí
+      _BarItem(icon: Icons.assignment_turned_in, label: 'Respuestas'),
       _BarItem(icon: Icons.person, label: 'Perfil'),
     ];
 
@@ -138,12 +175,13 @@ class _CustomBottomBar extends StatelessWidget {
           duration: const Duration(milliseconds: 180),
           curve: Curves.easeInOut,
           padding: const EdgeInsets.symmetric(vertical: 8),
-          decoration: isSelected
-              ? BoxDecoration(
-                  color: const Color(0xFF377CC8).withOpacity(0.10),
-                  borderRadius: BorderRadius.circular(16),
-                )
-              : null,
+          decoration:
+              isSelected
+                  ? BoxDecoration(
+                    color: const Color(0xFF377CC8).withOpacity(0.10),
+                    borderRadius: BorderRadius.circular(16),
+                  )
+                  : null,
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
