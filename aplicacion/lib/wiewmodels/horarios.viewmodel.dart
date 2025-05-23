@@ -16,9 +16,8 @@ class HorariosViewModel extends ChangeNotifier {
     notifyListeners();
 
     try {
-      final query = await FirebaseFirestore.instance
-          .collection('horarios')
-          .get();
+      final query =
+          await FirebaseFirestore.instance.collection('horarios').get();
 
       _horarios = query.docs.map((doc) => doc.data()).toList();
     } catch (e) {
@@ -37,13 +36,24 @@ class HorariosViewModel extends ChangeNotifier {
 
   /// Retorna los horarios del laboratorio solo para el día actual.
   List<Map<String, dynamic>> obtenerHorariosDeHoy() {
-    // Mapea el número del día de la semana a su nombre en español
     const dia = [
-      'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'
+      'Lunes',
+      'Martes',
+      'Miércoles',
+      'Jueves',
+      'Viernes',
+      'Sábado',
+      'Domingo',
     ];
     final hoy = DateTime.now();
-    // DateTime.weekday: lunes=1, domingo=7
     final nombreDia = dia[hoy.weekday - 1];
+
+    // DEBUG: imprime los valores para comparar
+    print('Hoy es: $nombreDia');
+    print('Horarios:');
+    for (var h in _horarios) {
+      print(h['dia']);
+    }
 
     return _horarios.where((horario) => horario['dia'] == nombreDia).toList();
   }

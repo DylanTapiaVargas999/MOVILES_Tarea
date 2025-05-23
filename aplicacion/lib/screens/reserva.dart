@@ -7,6 +7,11 @@ class SeleccionarReservaScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Llama a cargarHorarios solo una vez cuando se construye la pantalla
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      Provider.of<HorariosViewModel>(context, listen: false).cargarHorarios();
+    });
+
     return Scaffold(
       appBar: AppBar(title: const Text('Horarios de Laboratorio de Hoy')),
       body: Consumer<HorariosViewModel>(
@@ -20,6 +25,10 @@ class SeleccionarReservaScreen extends StatelessWidget {
 
           final horariosDeHoy = horariosVM.obtenerHorariosDeHoy();
 
+          for (var h in horariosDeHoy) {
+            print('Horario: $h');
+          }
+
           if (horariosDeHoy.isEmpty) {
             return const Center(child: Text('No hay horarios para hoy.'));
           }
@@ -27,17 +36,43 @@ class SeleccionarReservaScreen extends StatelessWidget {
           return ListView.builder(
             itemCount: horariosDeHoy.length,
             itemBuilder: (context, index) {
-              final horario = horariosDeHoy[index];
+              final horarioDoc = horariosDeHoy[index];
+              final laboratorio =
+                  horarioDoc['laboratorio'] ?? 'Sin laboratorio';
+              final listaHorarios =
+                  horarioDoc['horarios'] as List<dynamic>? ?? [];
+
               return Card(
                 margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                child: ListTile(
-                  title: Text(horario['Curso'] ?? 'Sin curso'),
-                  subtitle: Column(
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text('Profesor: ${horario['Profesor'] ?? 'Desconocido'}'),
-                      Text('Hora: ${horario['hora_inicio'] ?? ''} - ${horario['hora_fin'] ?? ''}'),
-                      if (horario['lab'] != null) Text('Laboratorio: ${horario['lab']}'),
+                      Text(
+                        'Laboratorio: $laboratorio',
+                        style: const TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                      ...listaHorarios.map(
+                        (h) => Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 4.0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                h['Curso'] ?? 'Sin curso',
+                                style: const TextStyle(fontSize: 16),
+                              ),
+                              Text(
+                                'Profesor: ${h['Profesor'] ?? 'Desconocido'}',
+                              ),
+                              Text(
+                                'Hora: ${h['hora_inicio'] ?? ''} - ${h['hora_fin'] ?? ''}',
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
                     ],
                   ),
                 ),
