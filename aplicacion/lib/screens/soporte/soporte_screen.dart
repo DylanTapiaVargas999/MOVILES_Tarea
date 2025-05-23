@@ -25,6 +25,7 @@ class _SoporteScreenState extends State<SoporteScreen> {
         title: const Text('Solicitudes de Reserva'),
         backgroundColor: azulOscuro,
         foregroundColor: Colors.white,
+        automaticallyImplyLeading: false, // Quita el botón de retroceso
         actions: [
           IconButton(
             icon: const Icon(Icons.logout),

@@ -115,6 +115,17 @@ class _HomeScreenState extends State<HomeScreen> {
         backgroundColor: Color(0xFF003366),
         foregroundColor: Colors.white,
         elevation: 2,
+        automaticallyImplyLeading: false,
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.logout),
+            tooltip: 'Cerrar sesión',
+            onPressed: () {
+              // Aquí puedes agregar la lógica para cerrar sesión
+              Navigator.pushReplacementNamed(context, '/login');
+            },
+          ),
+        ],
       ),
       body: _buildContent(),
       bottomNavigationBar: _CustomBottomBar(
