@@ -1,0 +1,722 @@
+[
+  {
+    "laboratorio": "LAB A",
+    "dia": "Lunes",
+    "horarios": [
+      { 
+        "hora_inicio": "09:40",
+        "hora_fin": "11:20",
+        "Curso": "Programación I",
+        "Profesor": "I. Chaparro"
+      },
+      {
+        "hora_inicio": "11:20",
+        "hora_fin": "13:00",
+        "Curso": "Estructura de Datos",
+        "Profesor": "H. Sisa"
+      },
+      {
+        "hora_inicio": "15:50",
+        "hora_fin": "17:30",
+        "Curso": "Gestión de Proyectos",
+        "Profesor": "Martha Paredes"
+      },
+      {
+        "hora_inicio": "17:30",
+        "hora_fin": "19:10",
+        "Curso": "Ingeniería de Software",
+        "Profesor": "Martha Paredes"
+      },
+      {
+        "hora_inicio": "20:00",
+        "hora_fin": "21:40",
+        "Curso": "Construcción de Software I",
+        "Profesor": "A. Flor"
+      }
+    ]
+  },
+  {
+    "laboratorio": "LAB A",
+    "dia": "Martes",
+    "horarios": [
+      {
+        "hora_inicio": "08:00",
+        "hora_fin": "09:40",
+        "Curso": "Sistemas Electrónicos Digitales",
+        "Profesor": "A. Yanqui"
+      },
+      {
+        "hora_inicio": "11:20",
+        "hora_fin": "13:00",
+        "Curso": "Diseño de Base de Datos",
+        "Profesor": "H. Sisa"
+      },
+      {
+        "hora_inicio": "15:00",
+        "hora_fin": "16:40",
+        "Curso": "Estructura de Datos",
+        "Profesor": "I. Chaparro"
+      },
+      {
+        "hora_inicio": "16:40",
+        "hora_fin": "18:20",
+        "Curso": "Soluciones Móviles I",
+        "Profesor": "E. Rodríguez"
+      },
+      {
+        "hora_inicio": "18:20",
+        "hora_fin": "20:00",
+        "Curso": "Inteligencia de Negocios",
+        "Profesor": "P. Cuadros"
+      },
+      {
+        "hora_inicio": "20:00",
+        "hora_fin": "21:40",
+        "Curso": "Inteligencia de Negocios (Práctica)",
+        "Profesor": "P. Cuadros"
+      }
+    ]
+  },
+  {
+    "laboratorio": "LAB B",
+    "dia": "Lunes",
+    "horarios": [
+      {
+        "hora_inicio": "08:00",
+        "hora_fin": "09:40",
+        "Curso": "Sistemas Electrónicos Digitales (Teoría Sec. A y B)",
+        "Profesor": "A. Yanqui"
+      },
+      {
+        "hora_inicio": "11:20",
+        "hora_fin": "13:00",
+        "Curso": "Modelamiento de Procesos (Teoría)",
+        "Profesor": "Juan Choque"
+      },
+      {
+        "hora_inicio": "15:00",
+        "hora_fin": "16:40",
+        "Curso": "Taller de Liderazgo y Emprendimiento",
+        "Profesor": "Liliana Vega"
+      },
+      {
+        "hora_inicio": "18:20",
+        "hora_fin": "20:00",
+        "Curso": "Redes y Comunicaciones de Datos II",
+        "Profesor": "M. Alcantara"
+      },
+      {
+        "hora_inicio": "20:00",
+        "hora_fin": "21:40",
+        "Curso": "Redes y Comunicaciones de Datos I",
+        "Profesor": "M. Alcantara"
+      }
+    ]
+  },
+  {
+    "laboratorio": "LAB B",
+    "dia": "Martes",
+    "horarios": [
+      {
+        "hora_inicio": "08:00",
+        "hora_fin": "09:40",
+        "Curso": "Sistemas de Información",
+        "Profesor": "Liliana Vega"
+      },
+      {
+        "hora_inicio": "09:40",
+        "hora_fin": "11:20",
+        "Curso": "Arquitectura de Computadoras (Sección A y B)",
+        "Profesor": "Alex Yanqui"
+      },
+      {
+        "hora_inicio": "11:20",
+        "hora_fin": "13:00",
+        "Curso": "Modelamiento de Procesos",
+        "Profesor": "A. Rodriguez"
+      },
+      {
+        "hora_inicio": "13:50",
+        "hora_fin": "16:20",
+        "Curso": "Diseño en Ingeniería",
+        "Profesor": "Elizabeth Merma"
+      }
+    ]
+  },
+  {
+    "laboratorio": "LAB B",
+    "dia": "Miércoles",
+    "horarios": [
+      {
+        "hora_inicio": "08:00",
+        "hora_fin": "09:40",
+        "Curso": "Sistemas de Información",
+        "Profesor": "Liliana Vega"
+      },
+      {
+        "hora_inicio": "11:20",
+        "hora_fin": "13:00",
+        "Curso": "Arquitectura de Computadoras (Sección B)",
+        "Profesor": "Alex Yanqui"
+      },
+      {
+        "hora_inicio": "15:00",
+        "hora_fin": "16:40",
+        "Curso": "Inteligencia Artificial",
+        "Profesor": "I. Chaparro"
+      },
+      {
+        "hora_inicio": "16:40",
+        "hora_fin": "18:20",
+        "Curso": "Planeamiento Estratégico de TI",
+        "Profesor": "O. Jimenez"
+      },
+      {
+        "hora_inicio": "18:20",
+        "hora_fin": "20:00",
+        "Curso": "Infraestructura de TI",
+        "Profesor": "Martin Alcantara"
+      }
+    ]
+  },
+  {
+    "laboratorio": "LAB B",
+    "dia": "Jueves",
+    "horarios": [
+      {
+        "hora_inicio": "09:40",
+        "hora_fin": "11:20",
+        "Curso": "Arquitectura de Computadoras (Secc. B)",
+        "Profesor": "Alex Yanqui"
+      },
+      {
+        "hora_inicio": "11:20",
+        "hora_fin": "13:00",
+        "Curso": "Sistemas Electrónicos Digitales",
+        "Profesor": "A. Yanqui"
+      },
+      {
+        "hora_inicio": "13:50",
+        "hora_fin": "16:20",
+        "Curso": "Diseño en Ingeniería",
+        "Profesor": "Elizabeth Merma"
+      },
+      {
+        "hora_inicio": "18:20",
+        "hora_fin": "20:00",
+        "Curso": "Patrones de Software",
+        "Profesor": "P. Cuadros"
+      },
+      {
+        "hora_inicio": "20:00",
+        "hora_fin": "21:40",
+        "Curso": "Redes y Comunicaciones de Datos I",
+        "Profesor": "M. Alcantara"
+      }
+    ]
+  },
+  {
+    "laboratorio": "LAB B",
+    "dia": "Viernes",
+    "horarios": [
+      {
+        "hora_inicio": "08:00",
+        "hora_fin": "09:40",
+        "Curso": "Modelamiento de Procesos",
+        "Profesor": "Juan Choque"
+      },
+      {
+        "hora_inicio": "11:20",
+        "hora_fin": "13:00",
+        "Curso": "Sistemas Electrónicos Digitales",
+        "Profesor": "A. Yanqui"
+      },
+      {
+        "hora_inicio": "16:40",
+        "hora_fin": "18:20",
+        "Curso": "Auditoría de Sistemas",
+        "Profesor": "O. Jimenez"
+      },
+      {
+        "hora_inicio": "20:00",
+        "hora_fin": "21:40",
+        "Curso": "Redes y Comunicaciones de Datos II",
+        "Profesor": "M. Alcantara"
+      }
+    ]
+  },
+  {
+    "laboratorio": "LAB B",
+    "dia": "Sábado",
+    "horarios": [
+      {
+        "hora_inicio": "09:40",
+        "hora_fin": "11:20",
+        "Curso": "Infraestructura de TI",
+        "Profesor": "Martin Alcantara"
+      }
+    ]
+  },
+  {
+    "laboratorio": "LAB C",
+    "dia": "Lunes",
+    "horarios": [
+      {
+        "hora_inicio": "09:40",
+        "hora_fin": "11:20",
+        "Curso": "Programación II (Secc. A)",
+        "Profesor": "E. Lanchipa"
+      },
+      {
+        "hora_inicio": "11:20",
+        "hora_fin": "13:00",
+        "Curso": "Arquitectura de Computadoras (Sección A)",
+        "Profesor": "A. Yanqui"
+      },
+      {
+        "hora_inicio": "15:00",
+        "hora_fin": "16:40",
+        "Curso": "Inteligencia Artificial",
+        "Profesor": "I. Chaparro"
+      },
+      {
+        "hora_inicio": "16:40",
+        "hora_fin": "18:20",
+        "Curso": "Programación WEB II (Teoría Secc. A y B)",
+        "Profesor": "E. Lanchipa"
+      },
+      {
+        "hora_inicio": "18:20",
+        "hora_fin": "20:00",
+        "Curso": "Base de Datos II",
+        "Profesor": "J. Choque"
+      }
+    ]
+  },
+  {
+    "laboratorio": "LAB C",
+    "dia": "Martes",
+    "horarios": [
+      {
+        "hora_inicio": "09:40",
+        "hora_fin": "11:20",
+        "Curso": "Interacción y Diseño de Interfaces (Teoría)",
+        "Profesor": "Tito Ale"
+      },
+      {
+        "hora_inicio": "18:20",
+        "hora_fin": "20:00",
+        "Curso": "Seguridad de TI",
+        "Profesor": "R. Taco"
+      },
+      {
+        "hora_inicio": "20:00",
+        "hora_fin": "21:40",
+        "Curso": "Construcción de Software II (Sec. A)",
+        "Profesor": "R. Valcarcel"
+      }
+    ]
+  },
+  {
+    "laboratorio": "LAB C",
+    "dia": "Miércoles",
+    "horarios": [
+      {
+        "hora_inicio": "09:40",
+        "hora_fin": "11:20",
+        "Curso": "Programación II (Secc. A)",
+        "Profesor": "E. Lanchipa"
+      },
+      {
+        "hora_inicio": "16:40",
+        "hora_fin": "20:00",
+        "Curso": "Programación WEB II (Sección A)",
+        "Profesor": "E. Lanchipa"
+      }
+    ]
+  },
+  {
+    "laboratorio": "LAB C",
+    "dia": "Jueves",
+    "horarios": [
+      {
+        "hora_inicio": "08:00",
+        "hora_fin": "09:40",
+        "Curso": "Interacción y Diseño de Interfaces",
+        "Profesor": "Tito Ale"
+      },
+      {
+        "hora_inicio": "18:20",
+        "hora_fin": "20:00",
+        "Curso": "Seguridad de TI",
+        "Profesor": "R. Taco"
+      },
+      {
+        "hora_inicio": "20:00",
+        "hora_fin": "21:40",
+        "Curso": "Construcción de Software II (Sec. A)",
+        "Profesor": "R. Valcarcel"
+      }
+    ]
+  },
+  {
+    "laboratorio": "LAB C",
+    "dia": "Viernes",
+    "horarios": [
+      {
+        "hora_inicio": "08:00",
+        "hora_fin": "09:40",
+        "Curso": "Arquitectura de Computadoras",
+        "Profesor": "A. Yanqui"
+      },
+      {
+        "hora_inicio": "09:40",
+        "hora_fin": "11:20",
+        "Curso": "Programación II (Secc. A)",
+        "Profesor": "E. Lanchipa"
+      },
+      {
+        "hora_inicio": "15:50",
+        "hora_fin": "18:20",
+        "Curso": "Taller de Tesis I",
+        "Profesor": "Luis Fernandez"
+      },
+      {
+        "hora_inicio": "18:20",
+        "hora_fin": "20:00",
+        "Curso": "Base de Datos II",
+        "Profesor": "J. Choque"
+      },
+      {
+        "hora_inicio": "20:00",
+        "hora_fin": "21:40",
+        "Curso": "Gerencia de TI",
+        "Profesor": "Ricardo Valcarcel"
+      }
+    ]
+  },
+  {
+    "laboratorio": "LAB C",
+    "dia": "Sábado",
+    "horarios": [
+      {
+        "hora_inicio": "08:00",
+        "hora_fin": "09:40",
+        "Curso": "Construcción de Software II",
+        "Profesor": "R. Valcarcel"
+      },
+      {
+        "hora_inicio": "09:40",
+        "hora_fin": "13:00",
+        "Curso": "Construcción de Software I (Sec. A)",
+        "Profesor": "R. Valcarcel"
+      }
+    ]
+  },
+  {
+    "laboratorio": "LAB D",
+    "dia": "Lunes",
+    "horarios": [
+      {
+        "hora_inicio": "09:40",
+        "hora_fin": "11:20",
+        "Curso": "Programación II (Secc. B)",
+        "Profesor": "E. Rodríguez"
+      },
+      {
+        "hora_inicio": "16:40",
+        "hora_fin": "18:20",
+        "Curso": "Estadística Inferencial y Análisis de Datos",
+        "Profesor": "L. Fernandez"
+      },
+      {
+        "hora_inicio": "18:20",
+        "hora_fin": "20:00",
+        "Curso": "Sistemas Operativos I",
+        "Profesor": "Renzo Taco"
+      },
+      {
+        "hora_inicio": "20:00",
+        "hora_fin": "21:40",
+        "Curso": "Investigación de Operaciones",
+        "Profesor": "Silvia Centella"
+      }
+    ]
+  },
+  {
+    "laboratorio": "LAB D",
+    "dia": "Martes",
+    "horarios": [
+      {
+        "hora_inicio": "15:50",
+        "hora_fin": "16:40",
+        "Curso": "Programación III",
+        "Profesor": "J. Choque"
+      },
+      {
+        "hora_inicio": "16:40",
+        "hora_fin": "18:20",
+        "Curso": "Ingeniería de Requerimientos (Secc. A)",
+        "Profesor": "Mariella Ibarra"
+      },
+      {
+        "hora_inicio": "18:20",
+        "hora_fin": "20:00",
+        "Curso": "Gestión de la Config. y Adm. de SW",
+        "Profesor": "Ricardo Valcarcel"
+      },
+      {
+        "hora_inicio": "20:00",
+        "hora_fin": "21:40",
+        "Curso": "Construcción de Software I (Secc. A)",
+        "Profesor": "A. Flor"
+      }
+    ]
+  },
+  {
+    "laboratorio": "LAB D",
+    "dia": "Miércoles",
+    "horarios": [
+      {
+        "hora_inicio": "08:50",
+        "hora_fin": "09:40",
+        "Curso": "Sistemas Elect. Digitales (Sec B)",
+        "Profesor": "A. Yanqui"
+      },
+      {
+        "hora_inicio": "15:00",
+        "hora_fin": "16:40",
+        "Curso": "Soluciones Móviles II",
+        "Profesor": "O. Jimenez"
+      }
+    ]
+  },
+  {
+    "laboratorio": "LAB D",
+    "dia": "Jueves",
+    "horarios": [
+      {
+        "hora_inicio": "15:00",
+        "hora_fin": "16:40",
+        "Curso": "Programación III",
+        "Profesor": "J. Choque"
+      },
+      {
+        "hora_inicio": "16:40",
+        "hora_fin": "18:20",
+        "Curso": "Base de Datos I (Secc. A)",
+        "Profesor": "E. Lanchipa"
+      },
+      {
+        "hora_inicio": "20:00",
+        "hora_fin": "21:40",
+        "Curso": "Sistemas Operativos I",
+        "Profesor": "R. Taco"
+      }
+    ]
+  },
+  {
+    "laboratorio": "LAB D",
+    "dia": "Viernes",
+    "horarios": [
+      {
+        "hora_inicio": "15:00",
+        "hora_fin": "16:40",
+        "Curso": "Programación III",
+        "Profesor": "E. Rodríguez"
+      },
+      {
+        "hora_inicio": "16:40",
+        "hora_fin": "18:20",
+        "Curso": "Base de Datos I (Secc. A)",
+        "Profesor": "E. Lanchipa"
+      },
+      {
+        "hora_inicio": "18:20",
+        "hora_fin": "20:00",
+        "Curso": "Sistemas Operativos I",
+        "Profesor": "R. Taco"
+      },
+      {
+        "hora_inicio": "20:00",
+        "hora_fin": "21:40",
+        "Curso": "Diseño y Arquitectura de Software",
+        "Profesor": "A. Flor"
+      }
+    ]
+  },
+  {
+    "laboratorio": "LAB E",
+    "dia": "Lunes",
+    "horarios": [
+      {
+        "hora_inicio": "08:00",
+        "hora_fin": "09:40",
+        "Curso": "Diseño de Base de Datos (LAB E - Secc. B)",
+        "Profesor": "E. Valencia"
+      },
+      {
+        "hora_inicio": "11:20",
+        "hora_fin": "13:00",
+        "Curso": "Modelamiento de Procesos (LAB E - Secc. B)",
+        "Profesor": "Natividad"
+      },
+      {
+        "hora_inicio": "15:50",
+        "hora_fin": "17:30",
+        "Curso": "Ingeniería de Requerimientos (Lab E) - Teoría Secc A y B",
+        "Profesor": ""
+      },
+      {
+        "hora_inicio": "20:00",
+        "hora_fin": "21:40",
+        "Curso": "Sistemas Operativos II (LAB E)",
+        "Profesor": "R. Taco"
+      }
+    ]
+  },
+  {
+    "laboratorio": "LAB E",
+    "dia": "Martes",
+    "horarios": [
+      {
+        "hora_inicio": "11:20",
+        "hora_fin": "13:00",
+        "Curso": "Modelamiento de Procesos (LAB E - Secc. B)",
+        "Profesor": "Natividad"
+      },
+      {
+        "hora_inicio": "16:40",
+        "hora_fin": "18:20",
+        "Curso": "Programación Web I (LAB E)",
+        "Profesor": "T. Ale"
+      },
+      {
+        "hora_inicio": "18:20",
+        "hora_fin": "20:00",
+        "Curso": "Base de Datos I (LAB E - Secc. A)",
+        "Profesor": "E. Lanchipa"
+      },
+      {
+        "hora_inicio": "20:00",
+        "hora_fin": "21:40",
+        "Curso": "Sistemas Operativos II (LAB E)",
+        "Profesor": "R. Taco"
+      }
+    ]
+  },
+  {
+    "laboratorio": "LAB E",
+    "dia": "Miércoles",
+    "horarios": [
+      {
+        "hora_inicio": "08:00",
+        "hora_fin": "09:40",
+        "Curso": "Diseño de Base de Datos (LAB E - Secc. B)",
+        "Profesor": "E. Valencia"
+      },
+      {
+        "hora_inicio": "09:40",
+        "hora_fin": "11:20",
+        "Curso": "Programación II (LAB E - Sec B)",
+        "Profesor": "N. Quispe"
+      },
+      {
+        "hora_inicio": "15:50",
+        "hora_fin": "17:30",
+        "Curso": "Gestión de Proyectos (LAB E)",
+        "Profesor": "Martha Paredes"
+      }
+    ]
+  },
+  {
+    "laboratorio": "LAB E",
+    "dia": "Jueves",
+    "horarios": [
+      {
+        "hora_inicio": "08:00",
+        "hora_fin": "09:40",
+        "Curso": "Diseño y Modelamiento Virtual (LAB E - Secc. B)",
+        "Profesor": "E. Rodriguez"
+      },
+      {
+        "hora_inicio": "15:00",
+        "hora_fin": "16:40",
+        "Curso": "Auditoría de Sistemas (LAB E)",
+        "Profesor": "O. Jimenez"
+      },
+      {
+        "hora_inicio": "16:40",
+        "hora_fin": "18:20",
+        "Curso": "Gestión de Proyectos (LAB E)",
+        "Profesor": "Martha Paredes"
+      },
+      {
+        "hora_inicio": "18:20",
+        "hora_fin": "20:00",
+        "Curso": "Programación Web I (LAB E)",
+        "Profesor": "T. Ale"
+      },
+      {
+        "hora_inicio": "20:00",
+        "hora_fin": "21:40",
+        "Curso": "Calidad y Pruebas de Software (LAB E)",
+        "Profesor": "P. Cuadros"
+      }
+    ]
+  },
+  {
+    "laboratorio": "LAB E",
+    "dia": "Viernes",
+    "horarios": [
+      {
+        "hora_inicio": "08:00",
+        "hora_fin": "09:40",
+        "Curso": "Modelamiento de Procesos (LAB E - Secc. B)",
+        "Profesor": "Natividad"
+      },
+      {
+        "hora_inicio": "09:40",
+        "hora_fin": "11:20",
+        "Curso": "Programación II (LAB E - Sec B)",
+        "Profesor": "N. Quispe"
+      },
+      {
+        "hora_inicio": "15:00",
+        "hora_fin": "16:40",
+        "Curso": "Diseño de Base de Datos (LAB E - Secc. B)",
+        "Profesor": "E. Valencia"
+      },
+      {
+        "hora_inicio": "16:40",
+        "hora_fin": "18:20",
+        "Curso": "Programación Web I (LAB E)",
+        "Profesor": "T. Ale"
+      },
+      {
+        "hora_inicio": "18:20",
+        "hora_fin": "20:00",
+        "Curso": "Soluciones Moviles II (LAB E)",
+        "Profesor": "O. Jimenez"
+      },
+      {
+        "hora_inicio": "20:00",
+        "hora_fin": "21:40",
+        "Curso": "Sistemas Operativos II (LAB E)",
+        "Profesor": "R. Taco"
+      }
+    ]
+  },
+  {
+    "laboratorio": "LAB E",
+    "dia": "Sábado",
+    "horarios": [
+      {
+        "hora_inicio": "09:00",
+        "hora_fin": "11:30",
+        "Curso": "Reforzamiento Programación Competitiva",
+        "Profesor": "Israel Chaparro"
+      }
+    ]
+  }
+]
