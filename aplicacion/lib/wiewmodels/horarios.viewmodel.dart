@@ -34,4 +34,17 @@ class HorariosViewModel extends ChangeNotifier {
     _errorMessage = null;
     notifyListeners();
   }
+
+  /// Retorna los horarios del laboratorio solo para el día actual.
+  List<Map<String, dynamic>> obtenerHorariosDeHoy() {
+    // Mapea el número del día de la semana a su nombre en español
+    const dias = [
+      'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'
+    ];
+    final hoy = DateTime.now();
+    // DateTime.weekday: lunes=1, domingo=7
+    final nombreDia = dias[hoy.weekday - 1];
+
+    return _horarios.where((horario) => horario['dia'] == nombreDia).toList();
+  }
 }

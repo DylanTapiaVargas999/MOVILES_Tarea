@@ -21,6 +21,7 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(create: (_) => LoginViewModel()),
         ChangeNotifierProvider(create: (_) => RegisterViewModel()),
+        
       ],
       child: MaterialApp(
         title: 'Sistema de Reservas',

@@ -16,7 +16,7 @@ class AppRouters {
       case '/home':
         return MaterialPageRoute(builder: (_) => HomeScreen());
       case '/formulario':
-        return MaterialPageRoute(builder: (_) => ReservaScreen());
+        return MaterialPageRoute(builder: (_) => SeleccionarReservaScreen());
       case '/perfil':
         final codigoAlumno = settings.arguments as String;
         return MaterialPageRoute(
