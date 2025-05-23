@@ -1,3 +1,4 @@
+import 'package:aplicacion/screens/editar_perfil.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../wiewmodels/perfil_viewmodel.dart';
@@ -46,6 +47,24 @@ class PerfilScreen extends StatelessWidget {
                   Text('Apellido: ${alumno.apellido}', style: const TextStyle(fontSize: 18)),
                   const SizedBox(height: 12),
                   Text('Ciclo: ${alumno.ciclo}', style: const TextStyle(fontSize: 18)),
+                  const SizedBox(height: 24),
+                  ElevatedButton(
+                    onPressed: () async {
+                      final actualizado = await Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => EditarPerfilScreen(alumno: alumno),
+                        ),
+                      );
+                      // Si se devolvió true, recarga el perfil
+                      if (actualizado == true) {
+                        // ignore: use_build_context_synchronously
+                        Provider.of<PerfilViewModel>(context, listen: false)
+                            .cargarPerfil(codigoAlumno);
+                      }
+                    },
+                    child: const Text('Editar perfil'),
+                  ),
                 ],
               ),
             ),

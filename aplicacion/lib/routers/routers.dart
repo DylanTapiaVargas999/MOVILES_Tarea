@@ -32,9 +32,9 @@ class AppRouters {
       case '/admin':
         return MaterialPageRoute(builder: (_) => AdminScreen());
       case '/respuesta':
-        final codigoAlumno = settings.arguments as String;
+        // No requiere argumentos, el código se obtiene desde el Provider en la pantalla
         return MaterialPageRoute(
-          builder: (_) => RespuestaFormularioScreen(codigoAlumno: codigoAlumno),
+          builder: (_) => RespuestaFormularioScreen(),
         );
       default:
         return MaterialPageRoute(

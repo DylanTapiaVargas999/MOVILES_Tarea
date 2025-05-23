@@ -35,4 +35,22 @@ class Alumno {
       'contrasena': contrasena,
     };
   }
+
+  Alumno copyWith({
+    String? id,
+    String? codigo,
+    String? nombre,
+    String? apellido,
+    String? ciclo,
+    String? contrasena,
+  }) {
+    return Alumno(
+      id: id ?? this.id,
+      codigo: codigo ?? this.codigo,
+      nombre: nombre ?? this.nombre,
+      apellido: apellido ?? this.apellido,
+      ciclo: ciclo ?? this.ciclo,
+      contrasena: contrasena ?? this.contrasena,
+    );
+  }
 }
