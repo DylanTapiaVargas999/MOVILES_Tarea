@@ -6,6 +6,7 @@ import 'wiewmodels/login_viewmodel.dart';
 import 'wiewmodels/register_viewmodel.dart';
 import 'wiewmodels/horarios.viewmodel.dart';
 import 'wiewmodels/formulario_reserva_viewmodel.dart';
+import 'wiewmodels/perfil_viewmodel.dart';
 import 'routers/routers.dart';
 
 void main() async {
@@ -25,6 +26,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => RegisterViewModel()),
         ChangeNotifierProvider(create: (_) => HorariosViewModel()),
         ChangeNotifierProvider(create: (_) => ReservaViewModel()),
+        ChangeNotifierProvider(create: (_) => PerfilViewModel()),
       ],
       child: MaterialApp(
         title: 'Sistema de Reservas',

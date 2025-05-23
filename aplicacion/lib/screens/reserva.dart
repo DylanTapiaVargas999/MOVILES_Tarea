@@ -1,6 +1,9 @@
+import 'package:aplicacion/screens/reserva_formulario.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../wiewmodels/horarios.viewmodel.dart';
+import '../wiewmodels/perfil_viewmodel.dart';
+import '../wiewmodels/login_viewmodel.dart';
 
 class SeleccionarReservaScreen extends StatelessWidget {
   const SeleccionarReservaScreen({super.key});
@@ -240,7 +243,54 @@ class _LaboratorioHorariosState extends State<_LaboratorioHorarios> {
                     Text('Hora: ${horarioSeleccionado!['hora_inicio'] ?? ''} - ${horarioSeleccionado!['hora_fin'] ?? ''}'),
                   ]
                 else
-                  const Text('Hora libre', style: TextStyle(fontWeight: FontWeight.bold, color: Colors.green)),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Text(
+                        'Hora libre',
+                        style: TextStyle(fontWeight: FontWeight.bold, color: Colors.green),
+                      ),
+                      const SizedBox(height: 8),
+                      ElevatedButton(
+                        onPressed: () async {
+                          // Obtén el código del alumno desde LoginViewModel
+                          final loginVM = Provider.of<LoginViewModel>(context, listen: false);
+                          final codigoAlumno = loginVM.codigoAlumno;
+
+                          if (codigoAlumno == null) {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(content: Text('No se encontró el código del estudiante')),
+                            );
+                            return;
+                          }
+
+                          // Carga el perfil del alumno usando PerfilViewModel
+                          final perfilVM = Provider.of<PerfilViewModel>(context, listen: false);
+                          await perfilVM.cargarPerfil(codigoAlumno);
+
+                          final alumno = perfilVM.alumno;
+                          if (alumno == null) {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(content: Text('No se encontró el perfil del estudiante')),
+                            );
+                            return;
+                          }
+
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => ReservaFormulario(
+                                alumno: alumno,
+                                lab: widget.laboratorio,
+                                horaInicio: horarioSeleccionado!['hora_inicio'],
+                                horaFin: horarioSeleccionado!['hora_fin'],
+                              ),
+                            ),
+                          );
+                        },
+                        child: const Text('Reservar'),
+                      ),
+                    ],
+                  ),
               ],
             ),
           ),

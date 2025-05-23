@@ -5,7 +5,7 @@ class Reserva {
   final String fecha;
   final String ciclo;
   final String curso;
-  final String tema;
+  final String estado;
   final String lab;
   final String horaInicio;
   final String horaFin;
@@ -17,7 +17,7 @@ class Reserva {
     required this.fecha,
     required this.ciclo,
     required this.curso,
-    required this.tema,
+    required this.estado,
     required this.lab,
     required this.horaInicio,
     required this.horaFin,
@@ -31,7 +31,7 @@ class Reserva {
       fecha: json['fecha'] ?? '',
       ciclo: json['ciclo'] ?? '',
       curso: json['curso'] ?? '',
-      tema: json['tema'] ?? '',
+      estado: json['estado'] ?? '',
       lab: json['lab'] ?? '',
       horaInicio: json['hora_inicio'] ?? '',
       horaFin: json['hora_fin'] ?? '',
@@ -45,7 +45,7 @@ class Reserva {
       'fecha': fecha,
       'ciclo': ciclo,
       'curso': curso,
-      'tema': tema,
+      'estado': estado,
       'lab': lab,
       'hora_inicio': horaInicio,
       'hora_fin': horaFin,

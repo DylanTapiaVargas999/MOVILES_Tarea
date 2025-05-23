@@ -1,149 +1,187 @@
-import 'package:aplicacion/wiewmodels/formulario_reserva_viewmodel.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import '../models/reserva_model.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import '../models/alumno_model.dart';
 
-class ReservaScreen extends StatefulWidget {
-  const ReservaScreen({super.key});
+class ReservaFormulario extends StatefulWidget {
+  final Alumno alumno;
+  final String lab;
+  final String horaInicio;
+  final String horaFin;
+
+  const ReservaFormulario({
+    Key? key,
+    required this.alumno,
+    required this.lab,
+    required this.horaInicio,
+    required this.horaFin,
+  }) : super(key: key);
 
   @override
-  State<ReservaScreen> createState() => _ReservaScreenState();
+  State<ReservaFormulario> createState() => _ReservaFormularioState();
 }
 
-class _ReservaScreenState extends State<ReservaScreen> {
+class _ReservaFormularioState extends State<ReservaFormulario> {
   final _formKey = GlobalKey<FormState>();
-  final codigoController = TextEditingController();
-  final nombreCompletoController = TextEditingController();
-  final fechaController = TextEditingController();
-  final cicloController = TextEditingController();
-  final cursoController = TextEditingController();
-  final temaController = TextEditingController();
-  final labController = TextEditingController();
-  final horaInicioController = TextEditingController();
-  final horaFinController = TextEditingController();
+
+  late TextEditingController cicloController;
+  late TextEditingController codigoController;
+  late TextEditingController cursoController;
+  late TextEditingController fechaController;
+  late TextEditingController horaInicioController;
+  late TextEditingController horaFinController;
+  late TextEditingController labController;
+  late TextEditingController nombreCompletoController;
+
+  final String estado = 'pendiente'; // Campo oculto
+
+  @override
+  void initState() {
+    super.initState();
+    cicloController = TextEditingController(text: widget.alumno.ciclo);
+    codigoController = TextEditingController(text: widget.alumno.codigo);
+    cursoController = TextEditingController();
+    fechaController = TextEditingController(
+      text: "${DateTime.now().day.toString().padLeft(2, '0')}/${DateTime.now().month.toString().padLeft(2, '0')}/${DateTime.now().year}",
+    );
+    horaInicioController = TextEditingController(text: widget.horaInicio);
+    horaFinController = TextEditingController(text: widget.horaFin);
+    labController = TextEditingController(text: widget.lab);
+    nombreCompletoController = TextEditingController(
+      text: '${widget.alumno.nombre} ${widget.alumno.apellido}',
+    );
+  }
 
   @override
   void dispose() {
-    codigoController.dispose();
-    nombreCompletoController.dispose();
-    fechaController.dispose();
     cicloController.dispose();
+    codigoController.dispose();
     cursoController.dispose();
-    temaController.dispose();
-    labController.dispose();
+    fechaController.dispose();
     horaInicioController.dispose();
     horaFinController.dispose();
+    labController.dispose();
+    nombreCompletoController.dispose();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (_) => ReservaViewModel(),
-      child: Consumer<ReservaViewModel>(
-        builder: (context, reservaViewModel, _) {
-          return Scaffold(
-            appBar: AppBar(title: const Text('Reservar Aula')),
-            body: Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Form(
-                key: _formKey,
-                child: ListView(
-                  children: [
-                    TextFormField(
-                      controller: codigoController,
-                      decoration: const InputDecoration(labelText: 'Código'),
-                      validator: (value) =>
-                          value == null || value.isEmpty ? 'Ingrese su código' : null,
-                    ),
-                    TextFormField(
-                      controller: nombreCompletoController,
-                      decoration: const InputDecoration(labelText: 'Nombre Completo'),
-                      validator: (value) =>
-                          value == null || value.isEmpty ? 'Ingrese su nombre completo' : null,
-                    ),
-                    TextFormField(
-                      controller: fechaController,
-                      decoration: const InputDecoration(labelText: 'Fecha'),
-                      validator: (value) =>
-                          value == null || value.isEmpty ? 'Ingrese la fecha' : null,
-                    ),
-                    TextFormField(
-                      controller: cicloController,
-                      decoration: const InputDecoration(labelText: 'Ciclo'),
-                      validator: (value) =>
-                          value == null || value.isEmpty ? 'Ingrese el ciclo' : null,
-                    ),
-                    TextFormField(
-                      controller: cursoController,
-                      decoration: const InputDecoration(labelText: 'Curso'),
-                      validator: (value) =>
-                          value == null || value.isEmpty ? 'Ingrese el curso' : null,
-                    ),
-                    TextFormField(
-                      controller: temaController,
-                      decoration: const InputDecoration(labelText: 'Tema'),
-                      validator: (value) =>
-                          value == null || value.isEmpty ? 'Ingrese el tema' : null,
-                    ),
-                    TextFormField(
-                      controller: labController,
-                      decoration: const InputDecoration(labelText: 'Laboratorio'),
-                      validator: (value) =>
-                          value == null || value.isEmpty ? 'Ingrese el laboratorio' : null,
-                    ),
-                    TextFormField(
-                      controller: horaInicioController,
-                      decoration: const InputDecoration(labelText: 'Hora de Inicio'),
-                      validator: (value) =>
-                          value == null || value.isEmpty ? 'Ingrese la hora de inicio' : null,
-                    ),
-                    TextFormField(
-                      controller: horaFinController,
-                      decoration: const InputDecoration(labelText: 'Hora de Fin'),
-                      validator: (value) =>
-                          value == null || value.isEmpty ? 'Ingrese la hora de fin' : null,
-                    ),
-                    const SizedBox(height: 20),
-                    if (reservaViewModel.errorMessage != null)
-                      Text(
-                        reservaViewModel.errorMessage!,
-                        style: const TextStyle(color: Colors.red),
-                      ),
-                    if (reservaViewModel.successMessage != null)
-                      Text(
-                        reservaViewModel.successMessage!,
-                        style: const TextStyle(color: Colors.green),
-                      ),
-                    const SizedBox(height: 20),
-                    reservaViewModel.isLoading
-                        ? const Center(child: CircularProgressIndicator())
-                        : ElevatedButton(
-                            onPressed: () async {
-                              if (_formKey.currentState!.validate()) {
-                                final reserva = Reserva(
-                                  id: '', // El id lo asigna Firestore
-                                  codigo: codigoController.text,
-                                  nombreCompleto: nombreCompletoController.text,
-                                  fecha: fechaController.text,
-                                  ciclo: cicloController.text,
-                                  curso: cursoController.text,
-                                  tema: temaController.text,
-                                  lab: labController.text,
-                                  horaInicio: horaInicioController.text,
-                                  horaFin: horaFinController.text,
-                                );
-                                await reservaViewModel.crearReserva(reserva);
-                              }
-                            },
-                            child: const Text('Reservar'),
-                          ),
-                  ],
-                ),
+    return Scaffold(
+      appBar: AppBar(title: Text('Formulario de Reserva')),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Form(
+          key: _formKey,
+          child: ListView(
+            children: [
+              TextFormField(
+                controller: cicloController,
+                decoration: InputDecoration(labelText: 'Ciclo'),
+                readOnly: true,
               ),
-            ),
-          );
-        },
+              TextFormField(
+                controller: codigoController,
+                decoration: InputDecoration(labelText: 'Código'),
+                readOnly: true,
+              ),
+              TextFormField(
+                controller: cursoController,
+                decoration: InputDecoration(labelText: 'Curso'),
+              ),
+              TextFormField(
+                controller: fechaController,
+                decoration: InputDecoration(labelText: 'Fecha'),
+                onTap: () async {
+                  FocusScope.of(context).requestFocus(FocusNode());
+                  DateTime? picked = await showDatePicker(
+                    context: context,
+                    initialDate: DateTime.now(),
+                    firstDate: DateTime(2020),
+                    lastDate: DateTime(2100),
+                  );
+                  if (picked != null) {
+                    fechaController.text =
+                        "${picked.day.toString().padLeft(2, '0')}/${picked.month.toString().padLeft(2, '0')}/${picked.year}";
+                  }
+                },
+              ),
+              TextFormField(
+                controller: horaInicioController,
+                decoration: InputDecoration(labelText: 'Hora Inicio'),
+                onTap: () async {
+                  FocusScope.of(context).requestFocus(FocusNode());
+                  TimeOfDay? picked = await showTimePicker(
+                    context: context,
+                    initialTime: TimeOfDay.now(),
+                  );
+                  if (picked != null) {
+                    horaInicioController.text =
+                        "${picked.hour.toString().padLeft(2, '0')}:${picked.minute.toString().padLeft(2, '0')}";
+                  }
+                },
+              ),
+              TextFormField(
+                controller: horaFinController,
+                decoration: InputDecoration(labelText: 'Hora Fin'),
+                onTap: () async {
+                  FocusScope.of(context).requestFocus(FocusNode());
+                  TimeOfDay? picked = await showTimePicker(
+                    context: context,
+                    initialTime: TimeOfDay.now(),
+                  );
+                  if (picked != null) {
+                    horaFinController.text =
+                        "${picked.hour.toString().padLeft(2, '0')}:${picked.minute.toString().padLeft(2, '0')}";
+                  }
+                },
+              ),
+              TextFormField(
+                controller: labController,
+                decoration: InputDecoration(labelText: 'Lab'),
+              ),
+              TextFormField(
+                controller: nombreCompletoController,
+                decoration: InputDecoration(labelText: 'Nombre Completo'),
+                readOnly: true,
+              ),
+              // El campo "tema" ha sido eliminado del formulario
+              SizedBox(height: 20),
+              ElevatedButton(
+                onPressed: () async {
+                  if (_formKey.currentState!.validate()) {
+                    final reservaData = {
+                      'ciclo': cicloController.text,
+                      'codigo': codigoController.text,
+                      'curso': cursoController.text,
+                      'fecha': fechaController.text,
+                      'hora_inicio': horaInicioController.text,
+                      'hora_fin': horaFinController.text,
+                      'lab': labController.text,
+                      'nombre_completo': nombreCompletoController.text,
+                      'estado': estado, // Campo oculto enviado como "pendiente"
+                    };
+
+                    try {
+                      await FirebaseFirestore.instance
+                          .collection('reservas')
+                          .add(reservaData);
+
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(content: Text('Reserva guardada correctamente')),
+                      );
+                      Navigator.of(context).pop(); // Regresa a la pantalla anterior
+                    } catch (e) {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(content: Text('Error al guardar la reserva')),
+                      );
+                    }
+                  }
+                },
+                child: Text('Reservar'),
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }
