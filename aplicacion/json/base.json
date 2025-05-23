@@ -3,78 +3,71 @@
     "laboratorio": "LAB A",
     "dia": "Lunes",
     "horarios": [
-      { 
-        "hora_inicio": "09:40",
-        "hora_fin": "11:20",
-        "Curso": "Programación I",
-        "Profesor": "I. Chaparro"
-      },
-      {
-        "hora_inicio": "11:20",
-        "hora_fin": "13:00",
-        "Curso": "Estructura de Datos",
-        "Profesor": "H. Sisa"
-      },
-      {
-        "hora_inicio": "15:50",
-        "hora_fin": "17:30",
-        "Curso": "Gestión de Proyectos",
-        "Profesor": "Martha Paredes"
-      },
-      {
-        "hora_inicio": "17:30",
-        "hora_fin": "19:10",
-        "Curso": "Ingeniería de Software",
-        "Profesor": "Martha Paredes"
-      },
-      {
-        "hora_inicio": "20:00",
-        "hora_fin": "21:40",
-        "Curso": "Construcción de Software I",
-        "Profesor": "A. Flor"
-      }
+    { 
+      "hora_inicio": "09:40", 
+      "hora_fin": "11:20",
+      "Curso": "Programación I", 
+      "Profesor": "I. Chaparro" 
+    },
+      { "hora_inicio": "11:20", "hora_fin": "13:00", "Curso": "Estructura de Datos", "Profesor": "H. Sisa" },
+      { "hora_inicio": "15:50", "hora_fin": "17:30", "Curso": "Gestión de Proyectos", "Profesor": "Martha Paredes" },
+      { "hora_inicio": "17:30", "hora_fin": "19:10", "Curso": "Ingeniería de Software", "Profesor": "Martha Paredes" },
+      { "hora_inicio": "20:00", "hora_fin": "21:40", "Curso": "Construcción de Software I", "Profesor": "A. Flor" }
     ]
   },
   {
     "laboratorio": "LAB A",
     "dia": "Martes",
     "horarios": [
-      {
-        "hora_inicio": "08:00",
-        "hora_fin": "09:40",
-        "Curso": "Sistemas Electrónicos Digitales",
-        "Profesor": "A. Yanqui"
-      },
-      {
-        "hora_inicio": "11:20",
-        "hora_fin": "13:00",
-        "Curso": "Diseño de Base de Datos",
-        "Profesor": "H. Sisa"
-      },
-      {
-        "hora_inicio": "15:00",
-        "hora_fin": "16:40",
-        "Curso": "Estructura de Datos",
-        "Profesor": "I. Chaparro"
-      },
-      {
-        "hora_inicio": "16:40",
-        "hora_fin": "18:20",
-        "Curso": "Soluciones Móviles I",
-        "Profesor": "E. Rodríguez"
-      },
-      {
-        "hora_inicio": "18:20",
-        "hora_fin": "20:00",
-        "Curso": "Inteligencia de Negocios",
-        "Profesor": "P. Cuadros"
-      },
-      {
-        "hora_inicio": "20:00",
-        "hora_fin": "21:40",
-        "Curso": "Inteligencia de Negocios (Práctica)",
-        "Profesor": "P. Cuadros"
-      }
+      { "hora_inicio": "08:00", "hora_fin": "09:40", "Curso": "Sistemas Electrónicos Digitales", "Profesor": "A. Yanqui" },
+      { "hora_inicio": "11:20", "hora_fin": "13:00", "Curso": "Diseño de Base de Datos", "Profesor": "H. Sisa" },
+      { "hora_inicio": "15:00", "hora_fin": "16:40", "Curso": "Estructura de Datos", "Profesor": "I. Chaparro" },
+      { "hora_inicio": "16:40", "hora_fin": "18:20", "Curso": "Soluciones Móviles I", "Profesor": "E. Rodríguez" },
+      { "hora_inicio": "18:20", "hora_fin": "20:00", "Curso": "Inteligencia de Negocios", "Profesor": "P. Cuadros" },
+      { "hora_inicio": "20:00", "hora_fin": "21:40", "Curso": "Inteligencia de Negocios (Práctica)", "Profesor": "P. Cuadros" }
+    ]
+  },
+  {
+    "laboratorio": "LAB A",
+    "dia": "Miércoles",
+    "horarios": [
+      { "hora_inicio": "08:00", "hora_fin": "09:40", "Curso": "Diseño y Modelamiento Virtual", "Profesor": "E. Rodríguez" },
+      { "hora_inicio": "09:40", "hora_fin": "11:20", "Curso": "Programación I", "Profesor": "I. Chaparro" },
+      { "hora_inicio": "11:20", "hora_fin": "13:00", "Curso": "Estructura de Datos", "Profesor": "H. Sisa" },
+      { "hora_inicio": "15:50", "hora_fin": "18:20", "Curso": "Taller de Tesis II / Trabajo de Investigación", "Profesor": "Luis Fernández" },
+      { "hora_inicio": "18:20", "hora_fin": "20:00", "Curso": "Soluciones Móviles I", "Profesor": "E. Rodríguez" },
+      { "hora_inicio": "20:00", "hora_fin": "21:40", "Curso": "Construcción de Software I", "Profesor": "R. Valcarcel" }
+    ]
+  },
+  {
+    "laboratorio": "LAB A",
+    "dia": "Jueves",
+    "horarios": [
+      { "hora_inicio": "09:40", "hora_fin": "11:20", "Curso": "Diseño de Base de Datos", "Profesor": "H. Sisa" },
+      { "hora_inicio": "11:20", "hora_fin": "13:00", "Curso": "Estructura de Datos", "Profesor": "H. Sisa" },
+      { "hora_inicio": "15:00", "hora_fin": "16:40", "Curso": "Estructura de Datos", "Profesor": "I. Chaparro" },
+      { "hora_inicio": "16:40", "hora_fin": "18:20", "Curso": "Ingeniería de Requerimientos", "Profesor": "Mariella Ibarra" },
+      { "hora_inicio": "18:20", "hora_fin": "20:00", "Curso": "Gestión de la Configuración y Administración de Software", "Profesor": "Ricardo Valcarcel" },
+      { "hora_inicio": "20:00", "hora_fin": "21:40", "Curso": "Construcción de Software I", "Profesor": "A. Flor" }
+    ]
+  },
+  {
+    "laboratorio": "LAB A",
+    "dia": "Viernes",
+    "horarios": [
+      { "hora_inicio": "09:40", "hora_fin": "11:20", "Curso": "Programación I", "Profesor": "I. Chaparro" },
+      { "hora_inicio": "11:20", "hora_fin": "13:00", "Curso": "Diseño de Base de Datos", "Profesor": "H. Sisa" },
+      { "hora_inicio": "15:00", "hora_fin": "16:40", "Curso": "Estructura de Datos", "Profesor": "I. Chaparro" },
+      { "hora_inicio": "16:40", "hora_fin": "18:20", "Curso": "Soluciones Móviles I", "Profesor": "E. Rodríguez" }
+    ]
+  },
+  {
+    "laboratorio": "LAB A",
+    "dia": "Sábado",
+    "horarios": [
+      { "hora_inicio": "08:00", "hora_fin": "09:40", "Curso": "Calidad y Pruebas de Software", "Profesor": "P. Cuadros" },
+      { "hora_inicio": "09:40", "hora_fin": "11:20", "Curso": "Inteligencia de Negocios", "Profesor": "P. Cuadros" },
+      { "hora_inicio": "11:20", "hora_fin": "13:00", "Curso": "Patrones de Software", "Profesor": "P. Cuadros" }
     ]
   },
   {
